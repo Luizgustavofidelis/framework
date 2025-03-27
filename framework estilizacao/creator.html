@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PageMaker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #13293D    ;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            background-color: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+        select, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+        select:focus, input[type="text"]:focus {
+            border-color: #800080;
+            outline: none;
+        }
+        .radio-group {
+            margin-bottom: 15px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        .radio-group input {
+            margin-right: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #800080;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #6a006a;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #800080;
+        }
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+      
+        textarea {
+            width: 100%;
+            padding: 20px;
+            font-size: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            border: 10px solid #000000;
+            border-radius: 4px;
+            background-color: #ffffff;
+            color: #d4d4d4;
+            margin-bottom: 15px;
+            resize: vertical;
+            box-sizing: border-box;
+            outline: none;
+        }
+        textarea:focus {
+            border-color: #800080;
+            box-shadow: 0 0 5px rgba(128, 0, 128, 0.6);
+        }
+        .button-container {
+            text-align: center;
+        }
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content-container">
+    <div>
+        <div class="section-title">Cabecalho</div>
+        <label for="corFundo">Cor de fundo</label>
+        <select id="corFundo" name="corFundo">
+            <option>--</option>
+            <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+            <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+            <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+            <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+            <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+            <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+        </select>
+
+        <label for="textoCabecalho">Texto para cabeçalho</label>
+        <input type="text" id="textoCabecalho" name="textoCabecalho">
+
+        <label for="corFonte">Cor da Fonte</label>
+        <select id="corFonte" name="corFonte">
+            <option>--</option>
+            <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+            <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+            <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+            <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+            <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+            <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+        </select>
+
+        <label for="tamFonte">Tamanho Fonte</label>
+        <select id="tamFonte" name="tamFonte">
+            <option>--</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+        </select>
+    </div>
+
+    <div>
+        <div class="section-title">Links</div>
+        <label for="links">Texto para os links</label>
+        <input type="text" name="links" id="links" placeholder="link1;link2;link3....">
+
+        <label for="corLinks">Cor do link</label>
+        <select id="corLinks" name="corLinks">
+            <option>--</option>
+            <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+            <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+            <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+            <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+            <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+            <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+        </select>
+
+        <div class="radio-group">
+            <label>Estilo do link</label>
+            <label for="estiloLinks1">Sublinhado</label>
+            <input type="radio" name="estiloLinks" id="estiloLinks1" value="1">
+            <label for="estiloLinks0">Não Sublinhado</label>
+            <input type="radio" name="estiloLinks" id="estiloLinks0" value="0">
+        </div>
+
+        <button onclick="gerarCodigo()">Gerar código</button>
+    </div>
+</div>
+
+<div class="section-title">HTML</div>
+<textarea cols="100" rows="30" id="codeHTML"></textarea>
+<div class="button-container">
+    <button onclick="download('codeHTML','index.html')">Download do código</button>
+</div>
+
+<div class="section-title">CSS</div>
+<textarea id="codeCSS" cols="100" rows="30"></textarea>
+<div class="button-container">
+    <button onclick="download('codeCSS','estilo.css')">Download do código</button>
+</div>
+
+<script src="funcoes.js"></script>
+</body>
+</html>
