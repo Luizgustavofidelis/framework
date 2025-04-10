@@ -41,15 +41,15 @@
             outline: none;
         }
         .radio-group {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         .radio-group label {
             display: inline-block;
-            margin-right: 15px;
+            margin-right: 4px;
             font-weight: normal;
         }
         .radio-group input {
-            margin-right: 5px;
+            margin-right: 10px;
         }
         button {
             padding: 10px 20px;
@@ -105,6 +105,11 @@
     </style>
 </head>
 <body>
+<div>
+    <h1>Arquivo HTML</h1>
+    NOME DO ARQUIVO HTML
+    <input type="text" id="nomeHTML" name="nomeHTML"><br>
+</div>
 
 <div class="content-container">
     <div>
@@ -143,13 +148,14 @@
             <option value="15">15</option>
             <option value="16">16</option>
             <option value="17">17</option>
-        </select>
+        </select><br>
     </div>
 
     <div>
-        <div class="section-title">Links</div>
-        <label for="links">Texto para os links</label>
-        <input type="text" name="links" id="links" placeholder="link1;link2;link3....">
+       <h1>links</h1>
+       texto para os links
+       <input type="text" name="links" id="links" placeholder="link1">
+       <input type="file" name="href" id="href"><br>
 
         <label for="corLinks">Cor do link</label>
         <select id="corLinks" name="corLinks">
@@ -163,10 +169,10 @@
         </select>
 
         <div class="radio-group">
-            <label>Estilo do link</label>
+            <label>Estilo do link: </label>
             <label for="estiloLinks1">Sublinhado</label>
             <input type="radio" name="estiloLinks" id="estiloLinks1" value="1">
-            <label for="estiloLinks0">Não Sublinhado</label>
+            <label for="estiloLinks0">| Não Sublinhado</label>
             <input type="radio" name="estiloLinks" id="estiloLinks0" value="0">
         </div>
 
@@ -177,13 +183,13 @@
 <div class="section-title">HTML</div>
 <textarea cols="100" rows="30" id="codeHTML"></textarea>
 <div class="button-container">
-    <button onclick="download('codeHTML','index.html')">Download do código</button>
+    <button onclick="download('codeHTML', '')">Download do código</button>
 </div>
 
 <div class="section-title">CSS</div>
 <textarea id="codeCSS" cols="100" rows="30"></textarea>
 <div class="button-container">
-    <button onclick="download('codeCSS','estilo.css')">Download do código</button>
+    <button onclick="gerarCodigo(); download('codeHTML', 'pagina.html')">Baixar HTML</button>
 </div>
 
 <script src="funcoes.js"></script>
