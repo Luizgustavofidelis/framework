@@ -81,6 +81,21 @@
         .button-container {
             text-align: center;
         }
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Estilo para garantir a separação do cabeçalho */
+        #cabecalho {
+            margin-bottom: 20px;  /* Garantir que haja espaço abaixo do cabeçalho */
+        }
+
+        /* Estilo para garantir a separação dos links */
+        #links {
+            margin-top: 30px;  /* Garantir que haja espaço acima dos links */
+        }
     </style>
 </head>
 <body>
@@ -140,8 +155,10 @@
     <div>
         <div class="section-title">Links</div>
         Texto para os links
-        <input type="text" name="links" id="links" placeholder="link1">
-        <input type="file" name="href" id="href"><br>
+        <input type="text" name="links" id="links-0" placeholder="link1">
+        <input type="file" name="href" id="href-0"><br>
+
+        <button type="button" id="addLinkButton">+ Adicionar Link</button>
 
         <label for="corLinks">Cor do link</label>
         <select id="corLinks" name="corLinks">
@@ -156,6 +173,9 @@
 
         <label for="hoverColor">Cor do Hover</label>
         <input type="color" id="hoverColor" name="hoverColor">
+
+        <label for="bgColorLinks">Cor de Fundo dos Links</label>
+        <input type="color" id="bgColorLinks" name="bgColorLinks">
 
         <label for="alturaLinks">Altura dos Links (px)</label>
         <input type="text" id="alturaLinks" name="alturaLinks">
