@@ -20,7 +20,23 @@ function configEstiloLinks(){
     ctxLinks+=" text-decoration:"+aux+";\n}\n";
     return ctxLinks;
 }
-
+function configHtmlLinks(){
+    links=document.getElementsByName('links');
+    href=document.getElementsByName('href');
+    links=document.querySelector("#links").value;
+    vetLinks=links.split(";");
+    ctxLinks="";
+    for(let i=0;i<vetLinks.length;i++) {
+        href=href[i].value.split("\\");
+        ctxLinks += '<a href="' +href[href.length-1]+'">' + vetLinks[i].value + '</a>';
+    }
+    return ctxLinks;
+}
+function configHTMLCabecalho(){
+    let aux=document.querySelector("#textoCabecalho").value;
+    ctxCabecalho='<h1>'+aux+'</h1>';
+    return ctxCabecalho;
+}
  function gerarCodigo(){
     //Cóigo para CSS
      let codeCSS=document.querySelector("#codeCSS");
@@ -39,4 +55,16 @@ function configEstiloLinks(){
          "</body>\n</html>";
      codeHTML.value=ctxHTML;
 
+ }
+ function download(campo,arquivo) {
+        if(arquivo.trim()==='')
+            arquivo=document.getElementById('nomeHTML').value+'.html'; 
+        var text = document.getElementById(campo).value;
+         var blob = new Blob([text], {type: "text/plain"});
+         var a = document.createElement("a");
+         a.href = URL.createObjectURL(blob);
+         a.download = arquivo;
+         document.body.appendChild(a);
+         a.click();
+         document.body.removeChild(a);
  }
