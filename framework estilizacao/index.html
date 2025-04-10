@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #13293D    ;
+            background-color: #13293D;
             color: #333;
             margin: 0;
             padding: 0;
@@ -27,7 +27,7 @@
             display: block;
             margin: 10px 0 5px;
         }
-        select, input[type="text"] {
+        select, input[type="text"], input[type="file"] {
             width: 100%;
             padding: 10px;
             font-size: 1rem;
@@ -39,17 +39,6 @@
         select:focus, input[type="text"]:focus {
             border-color: #800080;
             outline: none;
-        }
-        .radio-group {
-            margin-bottom: 10px;
-        }
-        .radio-group label {
-            display: inline-block;
-            margin-right: 4px;
-            font-weight: normal;
-        }
-        .radio-group input {
-            margin-right: 10px;
         }
         button {
             padding: 10px 20px;
@@ -75,7 +64,6 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }
-      
         textarea {
             width: 100%;
             padding: 20px;
@@ -90,25 +78,17 @@
             box-sizing: border-box;
             outline: none;
         }
-        textarea:focus {
-            border-color: #800080;
-            box-shadow: 0 0 5px rgba(128, 0, 128, 0.6);
-        }
         .button-container {
             text-align: center;
-        }
-        .content-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
         }
     </style>
 </head>
 <body>
+
 <div>
     <h1>Arquivo HTML</h1>
     NOME DO ARQUIVO HTML
-    <input type="text" id="nomeHTML" name="nomeHTML"><br>
+    <input type="text" id="nomeHTML" name="nomeHTML" placeholder="Digite o nome do arquivo">
 </div>
 
 <div class="content-container">
@@ -148,14 +128,20 @@
             <option value="15">15</option>
             <option value="16">16</option>
             <option value="17">17</option>
-        </select><br>
+        </select>
+
+        <label for="alturaCabecalho">Altura do Cabeçalho (px)</label>
+        <input type="text" id="alturaCabecalho" name="alturaCabecalho">
+
+        <label for="larguraCabecalho">Largura do Cabeçalho (%)</label>
+        <input type="text" id="larguraCabecalho" name="larguraCabecalho">
     </div>
 
     <div>
-       <h1>links</h1>
-       texto para os links
-       <input type="text" name="links" id="links" placeholder="link1">
-       <input type="file" name="href" id="href"><br>
+        <div class="section-title">Links</div>
+        Texto para os links
+        <input type="text" name="links" id="links" placeholder="link1">
+        <input type="file" name="href" id="href"><br>
 
         <label for="corLinks">Cor do link</label>
         <select id="corLinks" name="corLinks">
@@ -167,6 +153,15 @@
             <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
             <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
         </select>
+
+        <label for="hoverColor">Cor do Hover</label>
+        <input type="color" id="hoverColor" name="hoverColor">
+
+        <label for="alturaLinks">Altura dos Links (px)</label>
+        <input type="text" id="alturaLinks" name="alturaLinks">
+
+        <label for="larguraLinks">Largura dos Links (%)</label>
+        <input type="text" id="larguraLinks" name="larguraLinks">
 
         <div class="radio-group">
             <label>Estilo do link: </label>
@@ -183,15 +178,16 @@
 <div class="section-title">HTML</div>
 <textarea cols="100" rows="30" id="codeHTML"></textarea>
 <div class="button-container">
-    <button onclick="download('codeHTML', '')">Download do código</button>
+    <button onclick="download('codeHTML', '')">Baixar HTML</button>
 </div>
 
 <div class="section-title">CSS</div>
 <textarea id="codeCSS" cols="100" rows="30"></textarea>
 <div class="button-container">
-    <button onclick="gerarCodigo(); download('codeHTML', 'pagina.html')">Baixar HTML</button>
+    <button onclick="download('codeCSS', 'estilo.css')">Baixar CSS</button>
 </div>
 
 <script src="funcoes.js"></script>
+
 </body>
 </html>
